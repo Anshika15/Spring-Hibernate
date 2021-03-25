@@ -1,5 +1,8 @@
 package com.springdemo;
 
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Scope;
@@ -10,7 +13,7 @@ import org.springframework.stereotype.Component;
 //default bean id
 
 @Component
-@Scope("prototype")
+//@Scope("prototype")
 public class TennisCoach implements Coach {
 
 	// field injection
@@ -21,6 +24,18 @@ public class TennisCoach implements Coach {
 	// define a default constructor
 	public TennisCoach() {
 		System.out.println("Tennis coach:- Inside default constructor");
+	}
+	
+	// define my init method
+	@PostConstruct
+	public void doMyStartupStuff() {
+		System.out.println("TennisCoach: inside my doMyStartupStuff");
+	}
+	
+	// define my destroy method
+	@PreDestroy
+	public void doMyCleanUpStuff() {
+		System.out.println("Tennis Coach: do my clean up stuff");
 	}
 	
 	/*
