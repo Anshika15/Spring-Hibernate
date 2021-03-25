@@ -13,7 +13,7 @@ public class TennisCoach implements Coach {
 
 	// field injection
 	@Autowired
-	@Qualifier("happyFortuneService")
+	@Qualifier("randomFortuneService") // randomFortuneService is default naming for RandomFortuneService
 	private FortuneService fortuneService;
 	
 	// define a default constructor
