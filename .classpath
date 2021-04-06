@@ -131,5 +131,10 @@
 	<classpathentry kind="lib" path="/opt/tomcattrial/lib/catalina-ha.jar"/>
 	<classpathentry kind="lib" path="/opt/tomcattrial/lib/catalina-ant.jar"/>
 	<classpathentry kind="lib" path="/opt/tomcattrial/lib/annotations-api.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/hibernate-validator-7.0.0.Final.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/hibernate-validator-annotation-processor-7.0.0.Final.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/hibernate-validator-cdi-7.0.0.Final.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/jakarta.el-4.0.0.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/jakarta.validation-api-3.0.0.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>
