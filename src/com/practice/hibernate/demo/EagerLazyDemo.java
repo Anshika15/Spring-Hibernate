@@ -29,12 +29,25 @@ public class EagerLazyDemo {
 			Instructor tempInstructor = session.get(Instructor.class, theId);
 
 			System.out.println("Luv2Code:- Instructor: " + tempInstructor);
-
-			// get course for the instructor
+			
 			System.out.println("Luv2Code:- Courses: " + tempInstructor.getCourses());
+
 
 			// commit transaction
 			session.getTransaction().commit();
+			
+			// close the session
+			session.close();
+			
+			/* since courses are lazy loaded... this should fail */
+			/* Solutions to resolve lazy loading data */
+			
+			System.out.println("\n\nSession is Closed \n\n");
+			// option 1 : call getter method while session is open
+			
+			// get course for the instructor
+			System.out.println("Luv2Code:- Courses: " + tempInstructor.getCourses());
+
 			System.out.println("Luv2Code:- Work done!");
 
 		} finally {
