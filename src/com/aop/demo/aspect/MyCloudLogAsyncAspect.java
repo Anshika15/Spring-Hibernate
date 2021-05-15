@@ -2,22 +2,17 @@ package com.aop.demo.aspect;
 
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
-import org.aspectj.lang.annotation.Pointcut;
 import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
 @Aspect
 @Component
-@Order(2)
-public class MyDemoLoggingAspect {
-
-
+@Order(1)
+public class MyCloudLogAsyncAspect {
+	
 	@Before("com.aop.demo.aspect.AopExpressions.forDaoPackageNoGetterSetter()")
-	public void beforeAddAccountAdvice() {
-
-		System.out.println("\n=======>>>>>> Executing @Before advice on addAccount()");
-
+	public void logToCloudSync() {
+		System.out.println("\n=======>>>>>> Logging to cloud in async fashion");
 	}
-
 
 }
