@@ -15,8 +15,14 @@ public class AccountDAO {
 
 	// add a new method : findAccounts()
 
-	public List<Account> findAccounts() {
+	public List<Account> findAccounts(boolean tripWire) {
 
+		// simulate an exception
+		if (tripWire) {
+
+			throw new RuntimeException("Just throwig an Exception");
+
+		}
 		List<Account> myAccounts = new ArrayList<>();
 
 		// create sample accounts
