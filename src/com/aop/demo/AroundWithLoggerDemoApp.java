@@ -1,9 +1,13 @@
 package com.aop.demo;
 
+import java.util.logging.Logger;
+
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import com.aop.demo.service.TrafficFortuneService;
 
-public class AroundDemoApp {
+public class AroundWithLoggerDemoApp {
+
+	private static Logger myLogger = Logger.getLogger(AroundWithLoggerDemoApp.class.getName());
 
 	public static void main(String[] args) {
 
@@ -11,18 +15,17 @@ public class AroundDemoApp {
 		AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(DemoConfig.class);
 
 		// get the bean from spring container
-		TrafficFortuneService theFortuneService = context.getBean("trafficFortuneService",
-				TrafficFortuneService.class);
+		TrafficFortuneService theFortuneService = context.getBean("trafficFortuneService", TrafficFortuneService.class);
 
-		System.out.println("\nMain Program: AroundDemoApp");
+		myLogger.info("\nMain Program: AroundDemoApp");
 
-		System.out.println("Calling get Fortune");
+		myLogger.info("Calling get Fortune");
 
 		String data = theFortuneService.getFortune();
 
-		System.out.println("\nMy Fortune is: " + data);
+		myLogger.info("\nMy Fortune is: " + data);
 
-		System.out.println("Finished");
+		myLogger.info("Finished");
 
 		// close the context
 		context.close();
